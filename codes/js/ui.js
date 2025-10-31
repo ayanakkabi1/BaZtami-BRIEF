@@ -199,8 +199,8 @@ let ui = {
 
                 const isIncome = transaction.type === "income";
                 const bgColor = isIncome
-                    ? "bg-green-50 border-green-200"
-                    : "bg-red-50 border-red-200";
+                    ? "bg-green-100 border-green-300"
+                    : "bg-red-100 border-red-200";
                 const textColor = isIncome ? "text-green-600" : "text-red-600";
                 const sign = isIncome ? "+" : "-";
 

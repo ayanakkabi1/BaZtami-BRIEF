@@ -11,12 +11,12 @@
 
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-pink-50">
   <!-- Header -->
-  <header class="flex justify-between h-[15vh] w-full bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-5 content-center items-center">
+  <header class="flex justify-between h-[15vh] w-full px-10 py-5 content-center items-center">
     <div class="flex items-center gap-4 w-1/4">
       <img src="../assets/logo.png" alt="logo baztami" class="h-[10vh] p-2" />
-      <p class="font-mono text-2xl text-white">BaZtami</p>
+      <p class="font-mono text-3xl text-purple-900">BaZtami</p>
     </div>
     <div class="">
       <button id="openPopup"
@@ -28,7 +28,7 @@
 
 
   <!-- POPUP FORMULAIRE (AJOUTÉ) -->
-  <div id="popupOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+  <div id="popupOverlay" class="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50 hidden">
     <div id="popupContainer" class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
       <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 text-white">
         <div class="flex justify-between items-center">
@@ -109,15 +109,15 @@
 
 
   <!-- Message de bienvenue -->
-  <div id="greeting" class="py-8 px-10">
+  <div id="greeting" class=" max-w-5xl mx-auto py-6 sm:px-6 lg:px-8 rounded-lg">
     <div class="max-w-7xl mx-auto flex justify-center">
-      <p class="text-indigo-500 font-mono text-6xl font-bold text-center">
-        Bienvenue sur BaZtami
+      <p class="text-indigo-900 font-serif text-6xl font-bold text-center">
+        Maîtrisez le flux de votre argent.
       </p>
     </div>
     <div class="max-w-4xl mx-auto flex justify-center mt-4">
-      <p class="italic text-2xl font-medium text-purple-700 text-center">
-        Contrôlez Vos Finances, Développez Votre Liberté
+      <p class="text-2xl font-serif text-indigo-900 text-center">
+        Adoptez Baztami. Gérez mieux votre argent
       </p>
     </div>
   </div>
@@ -126,7 +126,7 @@
     <div class="px-4 py-6 sm:px-0">
       <!-- Statistiques -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-green-100 border-green-200 rounded-lg shadow p-6">
           <div class="flex items-center">
             <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
               <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@
             </div>
           </div>
         </div>
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-red-100 border-red-200 rounded-lg shadow p-6">
           <div class="flex items-center">
             <div class="p-3 rounded-full bg-red-100 text-red-600 mr-4">
               <!-- Style minimaliste -->
@@ -182,6 +182,7 @@
           </div>
         </div>
       </div>
+    
 
       <!-- Chargement des modules JavaScript -->
       <script src="../codes/js/app.js"></script>
