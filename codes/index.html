@@ -1,119 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BaZtami</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-  </head>
-  <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="flex justify-between h-[15vh] w-full bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-5">
-      <div class="flex items-center gap-4 w-1/4">
-        <img src="../assets/logo.png" alt="logo baztami" class="h-[10vh] p-2" />
-        <p class="font-mono text-2xl text-white">BaZtami</p>
-      </div>
-      <div class="flex items-center justify-center w-1/4">
-        <button
-          id="openPopup"
-          class="w-1/4 font-mono text-2xl rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-white px-4 py-2 text-indigo-600 hover:bg-indigo-50"
-        >
-          ➕
-        </button>
-      </div>
-    </header>
 
-    <!-- Popup avec formulaire -->
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Track your expenses, manage your budget, and achieve financial goals with our easy-to-use budget tracker app. Free personal finance management tool.">
+  <title>BaZtami</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-             
-    <!-- Message de bienvenue -->
-    <div id="greeting" class="py-8 px-10">
-      <div class="max-w-7xl mx-auto flex justify-center">
-        <p class="text-indigo-500 font-mono text-6xl font-bold text-center">
-          Bienvenue sur BaZtami
-        </p>
-      </div>
-      <div class="max-w-4xl mx-auto flex justify-center mt-4">
-        <p class="italic text-2xl font-medium text-purple-700 text-center">
-          Contrôlez Vos Finances, Développez Votre Liberté
-        </p>
-      </div>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="flex justify-between h-[15vh] w-full bg-gradient-to-r from-indigo-500 to-purple-600 px-10 py-5 content-center items-center">
+    <div class="flex items-center gap-4 w-1/4">
+      <img src="../assets/logo.png" alt="logo baztami" class="h-[10vh] p-2" />
+      <p class="font-mono text-2xl text-white">BaZtami</p>
     </div>
-         -->
-    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div class="px-4 py-6 sm:px-0">
-            <!-- Statistiques -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-</svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-medium text-gray-600">Total Revenus</p>
-                            <p id="totalIncome" class="text-2xl font-bold text-green-600">0.00 MAD</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-red-100 text-red-600 mr-4">
-  <!-- Style minimaliste -->
-<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-</svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-medium text-gray-600">Total Dépenses</p>
-                            <p id="totalExpenses" class="text-2xl font-bold text-red-600">0.00 MAD</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-medium text-gray-600">Solde</p>
-                            <p id="balance" class="text-2xl font-bold text-blue-600 ">0.00 MAD</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="">
+      <button id="openPopup"
+        class="font-mono text-2xl rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-white px-4 py-2 text-indigo-600 hover:bg-indigo-50">
+        ➕
+      </button>
+    </div>
+  </header>
+
+
+  <!-- POPUP FORMULAIRE (AJOUTÉ) -->
+  <div id="popupOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+    <div id="popupContainer" class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 text-white">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold">Nouvelle transaction</h2>
+          <button id="closePopup" class="text-white hover:text-indigo-200">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <p class="mt-2 opacity-90">Remplissez les détails de votre transaction</p>
+      </div>
+
+      <form id="transactionForm" class="p-6 space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+          <input type="text" id="name"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Salaire, Loyer...">
+          <div id="nameError" class="text-red-500 text-sm mt-1 hidden">Nom requis</div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+          <textarea id="description" rows="3"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Décrivez cette transaction..."></textarea>
+          <div id="descriptionError" class="text-red-500 text-sm mt-1 hidden">Description requise</div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Montant (MAD)</label>
+          <div class="relative">
+            <input type="number" id="price" step="0.01" min="0.01"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 pr-10"
+              placeholder="0.00">
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+              <span class="text-gray-500">MAD</span>
             </div>
-    
-    <!-- Section de prévisualisation -->
-    <div id="preview" class="max-w-7xl mx-auto mt-8 px-4 sm:px-6 lg:px-8 hidden">
-      <div class="bg-white rounded-xl shadow-lg p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-4">
-          Dernière transaction ajoutée
-        </h3>
-        <div id="previewContent" class="space-y-3">
-          <!-- Le contenu sera généré dynamiquement -->
+          </div>
+          <div id="priceError" class="text-red-500 text-sm mt-1 hidden">Montant positif requis</div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-3">Type</label>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <input type="radio" id="income" name="type" value="income" class="hidden peer">
+              <label for="income"
+                class="flex flex-col items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-green-500 peer-checked:bg-green-50">
+                <span class="font-medium">Revenu</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="expense" name="type" value="expense" class="hidden peer">
+              <label for="expense"
+                class="flex flex-col items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-red-500 peer-checked:bg-red-50">
+                <span class="font-medium">Dépense</span>
+              </label>
+            </div>
+          </div>
+          <div id="typeError" class="text-red-500 text-sm mt-2 hidden">Type requis</div>
+        </div>
+
+        <div class="flex gap-3 pt-4">
+          <button type="button" id="cancelBtn"
+            class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg">
+            Annuler
+          </button>
+          <button type="submit" id="submitBtn"
+            class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg">
+            Valider
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Message de bienvenue -->
+  <div id="greeting" class="py-8 px-10">
+    <div class="max-w-7xl mx-auto flex justify-center">
+      <p class="text-indigo-500 font-mono text-6xl font-bold text-center">
+        Bienvenue sur BaZtami
+      </p>
+    </div>
+    <div class="max-w-4xl mx-auto flex justify-center mt-4">
+      <p class="italic text-2xl font-medium text-purple-700 text-center">
+        Contrôlez Vos Finances, Développez Votre Liberté
+      </p>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 py-6 sm:px-0">
+      <!-- Statistiques -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">Total Revenus</p>
+              <p id="totalIncome" class="text-2xl font-bold text-green-600">0.00 MAD</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-red-100 text-red-600 mr-4">
+              <!-- Style minimaliste -->
+              <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">Total Dépenses</p>
+              <p id="totalExpenses" class="text-2xl font-bold text-red-600">0.00 MAD</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">Solde</p>
+              <p id="balance" class="text-2xl font-bold text-blue-600 ">0.00 MAD</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Section historique des transactions -->
-    <div id="transactionsHistory" class="max-w-7xl mx-auto mt-8 px-4 sm:px-6 lg:px-8 hidden">
-      <div class="bg-white rounded-xl shadow-lg p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-4">
-          Historique des transactions
-        </h3>
-        <div id="transactionsList" class="space-y-3">
-          <!-- Le contenu sera généré dynamiquement -->
+
+      <!-- Historique des transactions -->
+      <div class="max-w-7xl mx-auto px-4 py-6">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Historique des transactions</h3>
+          <div id="transactionsList" class="space-y-4">
+            <div class="text-center text-gray-500 py-8">
+              Aucune transaction enregistrée
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Chargement des modules JavaScript -->
-    <script type="module" src="codes/js/app.js"></script>
-  </body>
+      <!-- Chargement des modules JavaScript -->
+      <script src="../codes/js/app.js"></script>
+      <script src="../codes/js/storage.js"></script>
+      <script src="../codes/js/calculations.js"></script>
+      <script src="../codes/js/ui.js"></script>
+</body>
+
 </html>
